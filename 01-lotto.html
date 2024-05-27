@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>일단 만드는 JavaScript</title>
+  </head>
+  <body>
+    <h1>JavaScript 사용 방법</h1>
+    <!-- html에 적용하는 방법 -->
+    <script>
+      document.write("코드라이언 짱짱");
+    </script>
+    <!-- js 파일에 적용하는 방법 -->
+    <script src="myScript.js"></script>
+
+    <br />
+    <hr />
+    <br />
+
+    <h1>세미콜론(;)과 주석</h1>
+    <script>
+      // 세미콜론(;)이 없으면 오류가 발생한다.
+      document.write("안녕");
+      document.write("하이");
+
+      // 슬래시 주석
+      /* 블록 주석 */
+    </script>
+    <br />
+    <hr />
+    <br />
+
+    <h1>변수(variable)</h1>
+    <p>var 변수명 = '값'; let 변수명 = '값'; const 변수명 = '값';</p>
+    <script>
+      // 자료형:문자열(String)방식
+      var name = "코드라이언";
+      document.write(name);
+    </script>
+    <br />
+    <hr />
+    <br />
+    <h1>로또 번호 추첨기 1</h1>
+    <script>
+      // 0초과 45이하(1~45), 실수(float) => 정수(int)
+      var num = Math.random() * 45 + 1;
+      var ball1 = parseInt(num);
+      document.write(ball1);
+    </script>
+    <br />
+    <hr />
+    <br />
+    <h1>로또 번호 추첨기 2</h1>
+    <h3>1번 값 뽑아오기</h3>
+    <script>
+      var lotto = [1, 2, 3, 4, 5, 6];
+      document.write(lotto[0]);
+    </script>
+    <br />
+    <h3>마지막에 값 추가하기</h3>
+    <script>
+      var lotto = [1, 2, 3, 4, 5, 6];
+      lotto.push(7);
+      document.write(lotto);
+    </script>
+    <h3>랜덤으로 6개의 값 불러오기</h3>
+    <script>
+      var lotto = [];
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      lotto.push(parseInt(Math.random() * 45 + 1));
+      document.write(lotto);
+    </script>
+    <br />
+    <hr />
+    <br />
+    <h1>로또 번호 추첨기 3</h1>
+    <h2>반복문</h2>
+    <h3>for (시작; 끝; 증가) {반복하려는 코드}</h3>
+    <script>
+      for (var i = 0; i < 6; i++) {
+        document.write(i);
+      }
+    </script>
+    <h3>'for'를 활용한 로또 번호 추첨기 만들기</h3>
+    <script>
+      var lotto = [];
+      for (var i = 0; i < 6; i++) {
+        lotto.push(parseInt(Math.random() * 45 + 1));
+      }
+      document.write(lotto);
+    </script>
+    <br />
+    <hr />
+    <br />
+    <h1>로또 번호 추첨기 4</h1>
+    <h2>조건문</h2>
+    <h3>if (조건) {조건이 참일 때 실행}</h3>
+    <!-- 만약 중복이 아니라면 .push() -->
+    <script>
+      var lotto = [];
+      for (var i = 0; i < 6; i++) {
+        var num = parseInt(Math.random() * 45 + 1);
+        //lotto 배열에 num 값이 있는지 검사하는 코드
+        if (lotto.indexOf(num) == -1) {
+          //lotto 배열에 값을 추가하는 코드
+          lotto.push(num);
+        }
+      }
+      document.write(lotto);
+    </script>
+    <br />
+    <hr />
+    <br />
+    <h1>로또 번호 추첨기 5</h1>
+    <h2>반복문</h2>
+    <h3>while (조건) {반복하려는 코드}</h3>
+    <script>
+      var lotto = [];
+      while (lotto.length < 6) {
+        lotto.push(parseInt(Math.random() * 45 + 1));
+        if (lotto.indexOf(num) == -1) {
+          lotto.push(num);
+        }
+      }
+      document.write(lotto);
+    </script>
+    <br />
+    <hr />
+    <br />
+    <h1>로또 번호 추첨기 6</h1>
+    <p>오름차순으로 배열 값 정렬하기</p>
+    <script>
+      var lotto = [1, 2, 3, 33, 22, 11];
+      lotto.sort((a, b) => a - b);
+      document.write(lotto);
+    </script>
+    <br />
+    <hr />
+    <br />
+    <h3>로또 번호 추첨기에 오름차순으로 정렬하기</h3>
+    <script>
+      var lotto = [];
+      while (lotto.length < 6) {
+        lotto.push(parseInt(Math.random() * 45 + 1));
+        if (lotto.indexOf(num) == -1) {
+          lotto.push(num);
+        }
+      }
+      lotto.sort((a, b) => a - b);
+      document.write(lotto);
+    </script>
+  </body>
+</html>

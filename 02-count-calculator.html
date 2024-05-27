@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript로 만드는 [자소서 글자수 계산기]</title>
+  </head>
+  <body>
+    <h1>자기소개</h1>
+    <textarea
+      onkeydown="counter();"
+      class="form-control"
+      rows="3"
+      id="jasoseol">
+저는 인성 문제가 없습니다.</textarea
+    >
+    <span id="count">(0/200)</span>
+    <script>
+      function counter() {
+        var content = document.getElementById("jasoseol").value;
+        // if, substring을 활용하여 최대 200자 까지만 작성하게 막기
+        if (content.length > 200) {
+          content = content.substring(0, 200);
+          document.getElementById("jasoseol").value = content;
+        }
+        document.getElementById("count").innerHTML =
+          "(" + content.length + "/200)";
+      }
+      counter();
+    </script>
+  </body>
+</html>
